@@ -558,29 +558,30 @@ This is `inline code`
 With code highlighting
 
 ```space-style
-div:not(.sb-line-fenced-code) + .sb-line-fenced-code {
-  border-radius: 8px 8px 0px 0px;
+/* Rounding and padding */
+.sb-line-fenced-code {
+  padding: 0 15px !important;
+}
+
+.sb-line-fenced-code:first-of-type,
+.sb-line-fenced-code:not(.sb-line-fenced-code + .sb-line-fenced-code) {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
   padding-top: 10px !important;
-  padding-right: 10px !important;
 }
 
-.sb-line-fenced-code:not(.sb-fenced-code-iframe) {
-  padding-left: 15px !important;
-  padding-right: 10px !important;
-}
-
-.sb-line-fenced-code.cm-line:not(:has(+ .sb-line-fenced-code)) {
-  border-radius: 0px 0px 8px 8px;
+.sb-line-fenced-code:last-of-type,
+.sb-line-fenced-code:not(:has(+ .sb-line-fenced-code)) {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding-bottom: 10px !important;
 }
 
 .sb-line-code-outside {
   height: 5px !important;
 }
 
-.sb-line-code-outside:not(.sb-code-info) {
-  padding-bottom: 10px !important;
-}
-
+/* Codeblock type */
 #sb-main .cm-editor .sb-line-code-outside .sb-code-info {
   font-size: 70% !important;
   padding-right: 0px;
