@@ -192,17 +192,25 @@ html[data-theme=dark] {
 /* Mobile toolbar */
 @media only screen and (max-width: 600px) {
   #sb-top { opacity: 1 !important; }
+
   #sb-top .main .inner .sb-actions {
     background-color: var(--bg-alt);
   }
+
   #sb-top .main .inner .sb-actions button {
     color: var(--green);
   }
+
   #sb-top .main .inner .sb-actions button:hover {
     color: var(--teal);
   }
+
   #sb-top .sb-sync-progress:has(~ .hamburger) {
     margin-right: 3em;
+  }
+
+  #sb-root:has(.sb-sync-error) .main .inner .sb-actions button {
+    color: var(--green) !important;
   }
 }
 ```
