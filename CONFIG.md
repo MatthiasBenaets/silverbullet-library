@@ -70,6 +70,70 @@ config.set {
       slashCommand = "todo",
     }
   },
+  vim = {
+    unmap = {
+      "<Space>",
+      {
+         key = "<C-c>",
+        mode = "insert",
+      },
+    },
+    map = {
+      {
+        map = "jj",
+        to = "<Esc>",
+        mode = "insert",
+      },
+    },
+    noremap = {
+      {
+        map = "<",
+        to = "<gv",
+        mode = "visual",
+      },
+      {
+        map = ">",
+        to = ">gv",
+        mode = "visual",
+      },
+      {
+        map = "<Space>ff",
+        to = ":findfile<CR>",
+        mode = "normal",
+      },
+      {
+        map = "<Space>rc",
+        to = ":runcommand<CR>",
+        mode = "normal",
+      },
+      {
+        map = "<Space>fg",
+        to = ":findgrep<CR>",
+      },
+      {
+        map = "<Space>e",
+        to= ":toggletree<CR>",
+      },
+    },
+    commands = {
+      {
+        command = "Navigate: Page Picker",
+        ex = "findfile",
+      },
+      {
+        command = "Open Command Palette",
+        ex = "runcommand",
+      },
+      {
+        command = "Search Recursively",
+        ex = "findgrep",
+      },
+      {
+        command = "Tree View: Toggle",
+        ex = "toggletree",
+      },
+    }
+  },
   treeview = {
     position = "bhs",
     size = 0.5,
