@@ -111,6 +111,21 @@ config.set {
         to = ":findgrep<CR>",
       },
       {
+        map = "<Space>it",
+        to = ":cyclestate<CR>",
+        mode = "normal",
+      },
+      {
+        map = "<Space>h",
+        to = ":back<CR>",
+        mode = "normal",
+      },
+      {
+        map = "<Space>H",
+        to = ":forward<CR>",
+        mode = "normal",
+      },
+      {
         map = "<Space>e",
         to= ":toggletree<CR>",
       },
@@ -127,6 +142,18 @@ config.set {
       {
         command = "Search Recursively",
         ex = "findgrep",
+      },
+      {
+        command = "Task: Cycle State",
+        ex = "cyclestate",
+      },
+      {
+        command = "Navigate: Back in History",
+        ex = "back",
+      },
+      {
+        command = "Navigate: Forward in History",
+        ex = "forward",
       },
       {
         command = "Tree View: Toggle",
