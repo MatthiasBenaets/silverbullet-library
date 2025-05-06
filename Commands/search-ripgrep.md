@@ -13,17 +13,20 @@ command.define {
   name = "Search Recursively",
   key = "Ctrl-s",
   run = function()
-    -- open modal for search term
+    -- get search term and search
     local term = editor.prompt()
-    -- find matches
-    local results = rg(term)
     local selection = {}
+    local results
+    if term != null then
+      results = rg(term)
+    else return end
 
-    if results == 0 then
+    if not results then
+      editor.moveCursor(editor.getCursor()) -- for vim
       return editor.flashNotification("Nothing found", "warning")
     end
     
-    -- go over each find and create entry
+    -- create entry for each result
     for result in results do
       table.insert(selection, { 
         name = result.text,
@@ -32,7 +35,7 @@ command.define {
       })
     end
     
-    -- open model to list all entries and get user selection
+    -- selection modal
     local result = editor.filterBox("Select:", selection, "Found: " .. #results .. " entries")
     
     -- open file and navigate to position of match
@@ -45,7 +48,7 @@ command.define {
 }
 
 function rg(term)
-  -- ripgrep for search term in all markdown files
+  -- ripgrep search term in all markdown files
   local args = {"-nb", "--type", "markdown", term}
   local found, results = pcall(shell.run, "rg", args)
   
@@ -64,7 +67,7 @@ function rg(term)
     
     return results
   else
-    return 0 
+    return
   end
 end
 ```
