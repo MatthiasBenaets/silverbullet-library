@@ -65,10 +65,6 @@ config.set {
       command = "Task: Cycle State",
       key = "Ctrl-Enter",
     },
-    {
-      command = "Editor: Create Custom Task",
-      slashCommand = "todo",
-    }
   },
   vim = {
     unmap = {
