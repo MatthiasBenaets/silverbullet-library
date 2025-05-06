@@ -73,10 +73,6 @@ config.set {
   vim = {
     unmap = {
       "<Space>",
-      {
-         key = "<C-c>",
-        mode = "insert",
-      },
     },
     map = {
       {
@@ -116,12 +112,12 @@ config.set {
         mode = "normal",
       },
       {
-        map = "<Space>h",
+        map = "<Space><Left>",
         to = ":back<CR>",
         mode = "normal",
       },
       {
-        map = "<Space>H",
+        map = "<Space><Right>",
         to = ":forward<CR>",
         mode = "normal",
       },
