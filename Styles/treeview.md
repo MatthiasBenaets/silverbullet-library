@@ -5,7 +5,7 @@ Improved TreeView styling.
 - Correctly resizes depending on screen width
 - Moves menu to side in landscape mode and to bottom in portrait mode.
 - Resizes font depending on viewport for better readability
-- Required in [[CONFIG]]:
+- Required in [[Library/Custom/CONFIG]]:
 ```lua
 config.set {
   treeview = {
