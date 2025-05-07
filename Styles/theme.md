@@ -224,7 +224,6 @@ html[data-theme=dark] {
 
 /* No Edit */
 .sb-line-frontmatter-outside {
-  margin: 10px 0px;
   padding-top: 5px !important;
   border-radius: 8px 8px 8px 8px;
 }
