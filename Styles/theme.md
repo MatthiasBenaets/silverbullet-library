@@ -350,18 +350,18 @@ This is ==`code highlight`==.
 
 ```space-style
 /* Built-in admonition */
-.sb-admonition[admonition="warning"] {
+.sb-admonition[admonition="warning" i] {
   border-left: 5px solid var(--orange) !important;
   --admonition-color: var(--orange);
 }
 
-.sb-admonition[admonition="note"] {
+.sb-admonition[admonition="note" i] {
   border-left: 5px solid var(--blue) !important;
   --admonition-color: var(--blue);
 }
 
 /* Custom admonition */
-.sb-admonition[admonition="tip"] {
+.sb-admonition[admonition="tip" i] {
   border-left: 5px solid var(--green) !important;
   .sb-admonition-type * { display: none; }
   .sb-admonition-type::before { 
@@ -371,7 +371,7 @@ This is ==`code highlight`==.
   --admonition-color: var(--green);
 }
 
-.sb-admonition[admonition="important"] {
+.sb-admonition[admonition="important" i] {
   border-left: 5px solid var(--magenta) !important;
   .sb-admonition-type * { display: none; }
   .sb-admonition-type::before { 
@@ -381,7 +381,7 @@ This is ==`code highlight`==.
   --admonition-color: var(--magenta);
 }
 
-.sb-admonition[admonition="caution"] {
+.sb-admonition[admonition="caution" i] {
   border-left: 5px solid var(--red) !important;
   .sb-admonition-type * { display: none; }
   .sb-admonition-type::before { 
