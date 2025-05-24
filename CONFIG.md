@@ -72,7 +72,7 @@ config.set {
     },
     map = {
       {
-        map = "jj",
+        map = "jk",
         to = "<Esc>",
         mode = "insert",
       },
