@@ -4,6 +4,7 @@ FiraCode supports ligatures:
 <- -> == != >= <= => |- -| |> <| <> |-> <-| #! +++ --- ~~
 
 ```space-style
+/* priority: 1 */
 @font-face {
   font-family: 'Fira Code';
   src: url('https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Light.woff2') format('woff2'),
