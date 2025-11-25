@@ -14,11 +14,15 @@ end
 
 event.listen {
   name = "editor:init",
-  run = setSettings
+  run = function()
+    setSettings()
+  end
 }
 
 event.listen {
   name = "editor:pageLoaded",
-  run = setSettings
+  run = function()
+    setSettings()
+  end
 }
 ```

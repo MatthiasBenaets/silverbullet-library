@@ -1,6 +1,8 @@
 This is where you configure SilverBullet to your liking. See [[^Library/Std/Config]] for a full list of configuration options.
 
-```space-lua
+This is a duplicate of [[CONFIG]].
+
+```lua
 config.set {
   plugs = {
     -- Add your plugs here (https://silverbullet.md/Plugs)
@@ -11,53 +13,73 @@ config.set {
   actionButtons = {
     {
       icon = "home",
-      command = "Navigate: Home",
-      description = "Go to the index page"
+      description = "Go to the index page",
+      run = function()
+        editor.invokeCommand("Navigate: Home")
+      end
     },
     {
       icon = "folder",    
-      command = "Navigate: Page Picker",
-      description = "Open page"
+      description = "Open page",
+      run = function()
+        editor.invokeCommand("Navigate: Page Picker")
+      end
     },
     {
       icon = "file-plus",    
-      command = "Page: Create Page",
-      description = "Create page"
+      description = "Create page",
+      run = function()
+        editor.invokeCommand("Page: Create Page")
+      end
     },
     -- {  
     --  icon = "git-merge",
-    --  command = "Page: Create Subpage",
-    --  description = "Create subpage"
+    --  description = "Create subpage",
+    --  run = function()
+    --    editor.invokeCommand("Page: Create Subpage")
+    --  end
     -- },
     {
       icon = "trash",
-      command = "Page: Delete",
-      description = "Delete page"    
+      description = "Delete page",
+      run = function()
+        editor.invokeCommand("Page: Delete")
+      end
     },
     {
       icon = "search",
-      command = "Search Space",
-      description = "Search for words in space"
+      description = "Search for words in space",
+      run = function()
+        editor.invokeCommand("Search Space")
+      end
     },
     {
       icon = "sidebar",
-      command = "Tree View: Toggle",
-      description = "Toggle Tree View"
+      description = "Toggle Tree View",
+      run = function()
+        editor.invokeCommand("Tree View: Toggle")
+      end
     },
     {
       icon = "terminal",
-      command = "Open Command Palette",
-      description = "Run command"
+      description = "Run command",
+      run = function()
+        editor.invokeCommand("Open Command Palette")
+      end
     },
     -- {
-    --  icon = "arrow-left", 
-    --   command = "Navigate: Back in History",
-    --   description = "Go to previous page"
+    --   icon = "arrow-left",
+    --   description = "Go to previous page",
+    --   run = function()
+    --     editor.invokeCommand("Navigate: Back in History")
+    --   end
     -- },
     -- {
     --   icon = "arrow-right",    
-    --   command = "Navigate: Forward in History",
-    --   description = "Go to next page"
+    --   description = "Go to next page",
+    --   run = function()
+    --     editor.invokeCommand("Navigate: Forward in History")
+    --   end
     -- } 
   },
   shortcuts = {
@@ -159,6 +181,12 @@ config.set {
     dragAndDrop = {
       enabled = true,
       confirmOnRename = true
+    },
+    exclusions = {
+      {
+        type = "regex",
+        rule="^(?:Library|Repositories|CONTAINER_BOOT).*$",
+      },
     }
   }
 }

@@ -2,11 +2,7 @@
 
 Search recursively through all files for keywords
 Requires `ripgrep` on the host.
-For Docker, run the command below or add it to the compose file like this:
-```yaml
-entrypoint: >
-  /bin/bash -c "apt-get update && apt-get install -y ripgrep && /tini -- /docker-entrypoint.sh"
-```
+For Docker, add `apk add ripgrep` to the [[CONTAINER_BOOT]] file and recreate the container.
 
 ```space-lua
 command.define {

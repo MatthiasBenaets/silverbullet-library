@@ -36,6 +36,8 @@ Inspiration: [doom-one](https://github.com/doomemacs/themes/blob/master/themes/d
   --cyan: #46d9ff;
   --dark-cyan: #5699af;
   --font-size: 18px;
+  --editor-width: 960px;
+  --line-height: 1.4em;
 }
 
 /* General appearance */
@@ -100,6 +102,11 @@ html[data-theme=dark] {
   .cm-button {
     color: var(--bg) !important;
   }
+}
+
+/* Remove hidden query line */
+.cm-line:has(+ .sb-lua-wrapper) {
+  margin-top: calc(-0.5 * var(--line-height));
 }
 ```
 
@@ -490,9 +497,10 @@ html[data-theme=dark] {
 Requires one empty line
 
 ---
+***
 ```space-style
 #sb-main .cm-editor .sb-line-hr {
-  margin-top: 0em;
+  margin-top: var(--line-height);
   margin-bottom: 0em;
 }
 ```
