@@ -500,8 +500,8 @@ Requires one empty line
 ***
 ```space-style
 #sb-main .cm-editor .sb-line-hr {
-  margin-top: var(--line-height);
-  margin-bottom: 0em;
+  /*margin-top: var(--line-height);
+  margin-bottom: 0em;*/
 }
 ```
 
