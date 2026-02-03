@@ -1,7 +1,7 @@
 #script
 
 Mark checked checkboxes with date and time.
-TODO variant can he found here: [[Library/Custom/Commands/toggle-todo]]
+TODO variant can he found here: [[Custom/Commands/toggle-todo]]
 
 ```space-lua
 local active = false;

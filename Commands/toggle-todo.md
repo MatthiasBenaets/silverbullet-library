@@ -1,7 +1,7 @@
 #script
 
 Mark completed TODO tasks with date and time.
-Checkbox variant can he found here: [[Library/Custom/Commands/toggle-checkbox]]
+Checkbox variant can he found here: [[Custom/Commands/toggle-checkbox]]
 
 ```space-lua
 local active = true;

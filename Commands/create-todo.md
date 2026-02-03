@@ -5,7 +5,7 @@ By default, it creates a \[TODO\] with a unique tag.
 The script will only run inside [[Work/Todo]] and a `TODO` tag is required in the frontmatter for this to work. 
 It will auto-increment when creating a new task.
 
-This is the normal variant. The `slashcommand` variant can be found at [[Library/Custom/Commands/slash-todo]].
+This is the normal variant. The `slashcommand` variant can be found at [[Custom/Commands/slash-todo]].
 
 ```space-lua
 command.define {

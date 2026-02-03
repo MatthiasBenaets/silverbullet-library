@@ -791,7 +791,7 @@ Internal Links:
 ```
 
 ### Tooltip
-When entering a link: [[]]
+When entering a link: \[\[\]\]
 
 ```space-style
 /* Link tooltip */

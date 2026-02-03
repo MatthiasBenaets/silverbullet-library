@@ -1,7 +1,7 @@
 #script
 
 Create a new subpage in the same directory
-Page variant can be found here: [[Library/Custom/Commands/create-page]]
+Page variant can be found here: [[Custom/Commands/create-page]]
 
 ```space-lua
 command.define {
