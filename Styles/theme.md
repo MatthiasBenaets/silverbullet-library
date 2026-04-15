@@ -106,7 +106,7 @@ html[data-theme=dark] {
 
 /* Remove hidden query line */
 .cm-line:has(+ .sb-lua-wrapper) {
-  margin-top: calc(-0.5 * var(--line-height));
+  /*margin-top: calc(-0.5 * var(--line-height));*/
 }
 ```
 
@@ -717,12 +717,12 @@ Custom Lua blocks at top or bottom of the page.
 ```space-style
 /* Bottom spacing */
 #sb-main .cm-editor .sb-lua-top-widget {
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
 }
 
 /* Top spacing */
 #sb-main .cm-editor .sb-lua-bottom-widget {
-  margin-top: 10px;
+  /*margin-top: 10px;*/
 }
 
 /* Max height */
@@ -747,7 +747,7 @@ Lua queries of (meta)data.
 ```space-style
 /* Remove top spacing for block*/
 .cm-line:has(.sb-lua-wrapper):has(.sb-lua-directive-block) {
-  margin-top: -2ch;
+  /*margin-top: -2ch;*/
 }
 
 /* ${} - will also use code highlighting*/
