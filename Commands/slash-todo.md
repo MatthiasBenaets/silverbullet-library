@@ -25,33 +25,32 @@ slashcommand.define {
       return editor.flashNotification("TODO metadata not found")
     end
 
-    -- update frontmatter
+    -- re-fetch content after slash command is removed
     local content = editor.getText()
-    local from, to = string.find(content, value)
-    if from and to then
-      editor.dispatch({
-        changes = {
-          from = from - 1,
-          to = to,
-          insert = tostring(value + 1),
-        }
-      })
-    else
+    local cursor = editor.getCursor()
+
+    -- find TODO value in frontmatter
+    local valueStr = tostring(value)
+    local from, to = string.find(content, valueStr, 1, true)
+    if not from then
       return editor.flashNotification("TODO index not found")
     end
 
-    -- create task
-    local cursor = editor.getCursor()
-    local task = "* [TODO] #<" .. tostring(value+1) .. "> "
+    -- build task string
+    local newValueStr = tostring(value + 1)
+    local offset = #newValueStr - #valueStr
+    local task = "* [TODO] #<" .. newValueStr .. "> "
+
+    -- update frontmatter + insert task in one transaction
     editor.dispatch({
       changes = {
-        from = cursor,
-        insert = task
+        { from = from - 1, to = to, insert = newValueStr },
+        { from = cursor + offset, insert = task },
       }
     })
 
-    -- move cursor to write task
-    editor.moveCursor(cursor + string.len(task), true)
+    -- move cursor to end of task prefix
+    editor.moveCursor(cursor + offset + string.len(task), true)
   end
 }
 ```

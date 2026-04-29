@@ -31,13 +31,13 @@ if active then
         })
       elseif newState == " " then
         -- if unchecked, clear checkbox and datetime
-        local newText = string.gsub(text, "x", newState)
-        newText = string.gsub(newText, "\n  CLOSED:[^\n]*", "")
+        local newText = string.gsub(text, "\n  CLOSED:[^\n]*", "")
+        newText = string.gsub(newText, "%[x%]", "[ ]")
         
         editor.dispatch({
           changes = {
             from = from,
-            to = to,
+            to = from + string.len(text),
             insert = newText,
           }
         })
